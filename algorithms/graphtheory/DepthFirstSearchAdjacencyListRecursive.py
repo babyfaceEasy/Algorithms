@@ -21,14 +21,13 @@ class Graph:
         return self.adjacencyList
 
 
-
 class DepthFirstSearchAdjacencyListRecursive:
 
     def __init__(self, nodes_count, graph):
         self.graph = graph
         self.nodes_count = nodes_count
         self.visited = [False] * self.nodes_count
-        print(self.visited)
+        # print(self.visited)
 
     def dfs(self, node):
         if self.visited[node]:
@@ -49,9 +48,23 @@ def main():
     g.addEdge(1, 3, 0)
     g.addEdge(2, 3, 0)
 
-    print(g.getGraph())
+    # print(g.getGraph())
 
     dfs_obj = DepthFirstSearchAdjacencyListRecursive(4, g)
+    # dfs_obj.dfs(0)
+
+    g = Graph()
+
+    g.addEdge(0, 1, 0)
+    g.addEdge(0, 2, 0)
+    g.addEdge(1, 3, 0)
+    g.addEdge(1, 4, 0)
+    g.addEdge(2, 5, 0)
+    g.addEdge(2, 6, 0)
+
+    # print(g.getGraph())
+
+    dfs_obj = DepthFirstSearchAdjacencyListRecursive(7, g)
     dfs_obj.dfs(0)
 
 
